@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="n1">
+        <select v-model="opt"> 
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" v-model="n2">
+        <input type="button" value="=" @click="equ">
+        <input type="text" v-model="n3">
+
+    </div>
+    
+</body>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            n1:0,
+            opt:"+",
+            n2:0,
+            n3:0,
+        },
+        methods:{
+            //计算器算数方法
+            equ(){
+                switch(this.opt){
+                    case"+":
+                    this.n3=parseInt(this.n1)+parseInt(this.n2)
+                    break;
+                    case"-":
+                    this.n3=parseInt(this.n1)-parseInt(this.n2)
+                    break;
+                    case"*":
+                    this.n3=parseInt(this.n1)*parseInt(this.n2)
+                    break;
+                    case"/":
+                    this.n3=parseInt(this.n1)/parseInt(this.n2)
+                    break;
+                }
+                
+          // 注意：这是投机取巧的方式，正式开发中，尽量少用
+          /*var codeStr = 'parseInt(this.n1) ' + this.opt + ' parseInt(this.n2)'
+          this.result = eval(codeStr)*/
+            }
+        }
+
+    })
+</script>
+</html>
