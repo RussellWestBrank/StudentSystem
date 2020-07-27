@@ -1,4 +1,9 @@
 # 当前项目的说明
+##启动
+
+npm install --global nodemon
+
+nodemon app.js
 
 ## 留言本
 
