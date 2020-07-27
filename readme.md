@@ -5,6 +5,8 @@ npm install --global nodemon
 
 nodemon app.js
 
+http://localhost:3000/students
+
 ## 留言本
 
 node.js 和模板引擎
